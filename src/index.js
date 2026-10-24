@@ -8,6 +8,7 @@ import { TokenStore } from './quest/tokenStore.js';
 import { PremiumStore } from './utils/premiumStore.js';
 import { LanguageStore } from './utils/languageStore.js';
 import { SettingsStore } from './utils/settingsStore.js';
+import { startQuestAllScheduler } from './utils/questallScheduler.js';
 import * as dbModule from './utils/db.js';
 
 // Trackers & Role Store Imports
@@ -150,6 +151,7 @@ client.once('clientReady', async () => {
     console.log(`🤖 Logged in as ${client.user.tag}!`);
     await cacheGuildInvites(client);
     console.log(`⚡ Guild invites cached successfully.`);
+    startQuestAllScheduler(client);
 });
 
 // ── Invite & Boost Event Listeners ─────────────────────────────────────────
