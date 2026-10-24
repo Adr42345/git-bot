@@ -48,3 +48,15 @@ npm start
 
 ## Support
 Use the project issue tracker or your local logs for troubleshooting.
+
+## Automatic QuestAll Scheduler
+
+The bot reuses the existing `questall` logic for every linked user after startup and once per configured interval. It does not send a fake `!questall` message to a channel; it runs the same command logic privately in the background.
+
+Configure it in `.env`:
+
+```env
+AUTO_QUESTALL_ON_START=true
+AUTO_QUESTALL_DAILY=true
+AUTO_QUESTALL_INTERVAL_HOURS=24
+```
